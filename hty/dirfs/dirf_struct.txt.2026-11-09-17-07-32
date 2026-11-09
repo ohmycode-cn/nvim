@@ -1,0 +1,28 @@
+nvim config directorys and files construction guidance.
+requires:
+1. annotation use standard-computer-english
+2. guarantee necessary maintainability and readability
+
+root directory: ~/.config/nvim/ alias nvim
+
+nvim/
+    |__init.lua
+	|__lua/
+	      |__core/
+		  |      |__api_interface.lua
+		  |      |__basic.lua
+		  |      |__keyborad.lua
+		  |__opts/
+		  |      |__api_interface.lua
+		  |      |__lspc/
+		  |      |      |__c.lua
+		  |      |      |__cpp.lua
+		  |      |      |__rust.lua
+		  |      |      |__go.lua
+		  |      |      |__bash.lua
+		  |      |__lsp.lua
+		  |      |__clangd.lua
+		  |      |__cmp.lua
+		  |      |__treesitters.lua
+		  |      |__setup.lua
+		  |__pubs/

@@ -1,0 +1,12 @@
+-- LSP configuration for Go (server: gopls).
+--
+-- Status: not enabled. The language server is not installed on this device.
+-- To enable:
+--   1. Install gopls and make sure it is on $PATH.
+--   2. Uncomment the block below.
+--
+-- vim.lsp.config("gopls", {
+--   cmd = { "gopls" },
+--   root_markers = { "go.work", "go.mod", ".git" },
+-- })
+-- vim.lsp.enable("gopls")

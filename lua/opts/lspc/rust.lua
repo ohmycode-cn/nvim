@@ -1,0 +1,12 @@
+-- LSP configuration for Rust (server: rust-analyzer).
+--
+-- Status: not enabled. The language server is not installed on this device.
+-- To enable:
+--   1. Install rust-analyzer and make sure it is on $PATH.
+--   2. Uncomment the block below.
+--
+-- vim.lsp.config("rust_analyzer", {
+--   cmd = { "rust-analyzer" },
+--   root_markers = { "Cargo.toml", "rust-project.json", ".git" },
+-- })
+-- vim.lsp.enable("rust_analyzer")

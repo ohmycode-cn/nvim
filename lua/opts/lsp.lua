@@ -1,0 +1,5 @@
+require("opts.lspc.c")
+require("opts.lspc.cpp")
+require("opts.lspc.rust")
+require("opts.lspc.go")
+require("opts.lspc.bash")
