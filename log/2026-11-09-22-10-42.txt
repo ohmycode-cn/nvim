@@ -1,0 +1,4 @@
+[2026-11-09-22-10-42]
+- Overrode colorscheme background to match Termux colors.properties
+- Background: #FFF7D5, Foreground: #1A1A1A
+- Affected highlight groups: Normal, NormalNC, NormalSB, NormalFloat, SignColumn, EndOfBuffer, FoldColumn
