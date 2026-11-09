@@ -36,7 +36,14 @@ Neovim configuration for Termux.
     │       └── bash.lua
     └── pubs/
         ├── api_interface.lua # Pubs module loader
-        └── nvim_background.lua # Background override to match Termux
+        ├── nvim_background.lua # Theme loader (switch active theme here)
+        └── theme/            # Background themes matching .termux/tbk/
+            ├── cream.lua     # bg=#FFF7D5 fg=#1A1A1A (light, Termux default)
+            ├── catppuccin-mocha.lua # bg=#1E1E2E fg=#CDD6F4 (dark)
+            ├── dracula.lua   # bg=#282A36 fg=#F8F8F2 (dark)
+            ├── gray-white.lua # bg=#F0F0F0 fg=#2B2B2B (light)
+            ├── gruvbox.lua   # bg=#282828 fg=#EBDBB2 (dark)
+            └── nord.lua      # bg=#2E3440 fg=#D8DEE9 (dark)
 ```
 
 ## Plugins

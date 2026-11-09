@@ -35,3 +35,10 @@ nvim/
 	      |__pubs/
 		  |      |__api_interface.lua
 		  |      |__nvim_background.lua
+		  |      |__theme/
+		  |      |      |__cream.lua
+		  |      |      |__catppuccin-mocha.lua
+		  |      |      |__dracula.lua
+		  |      |      |__gray-white.lua
+		  |      |      |__gruvbox.lua
+		  |      |      |__nord.lua

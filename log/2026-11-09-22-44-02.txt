@@ -1,0 +1,7 @@
+[2026-11-09-22-44-02]
+- Created lua/pubs/theme/ with 6 background themes matching .termux/tbk/
+- Themes: cream, catppuccin-mocha, dracula, gray-white, gruvbox, nord
+- Each theme overrides Normal/NormalNC/NormalSB/NormalFloat/SignColumn/EndOfBuffer/FoldColumn
+- nvim_background.lua now acts as theme loader (switch by changing require target)
+- Updated dirf_struct.txt and README.MD
+- Verified: cream theme active, bg=#FFF7D5 fg=#1A1A1A, no errors
