@@ -1,0 +1,32 @@
+# DIRCTORYS: HIDE
+.git/
+.mimocode/
+.opencode/
+.vscode/
+.caches/
+.cache/
+.DS_Store/
+.idea/
+
+
+#DIRCTORYS: NORMAL
+build/
+
+
+#DIRCTORYS: TRACK STRUCTURE ONLY
+bin/*
+!bin/.gitkeep
+
+
+#FILES: HIDE
+
+
+
+#FILES: NORMAL
+mimo-*
+
+
+
+# ALWAYS TRACK
+!**/README.MD
+!**/README.md

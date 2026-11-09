@@ -1,0 +1,7 @@
+[2026-11-09-22-05-57]
+- Moved clangd.lua from opts/ to opts/lspc/ (user adjustment)
+- Fixed require path in lspc/c.lua: opts.clangd -> opts.lspc.clangd
+- Fixed require path in lspc/cpp.lua: opts.clangd -> opts.lspc.clangd
+- Updated dirf_struct.txt: clangd.lua now under opts/lspc/
+- Updated README.MD: reflect new directory structure
+- Verified: lsp, c, cpp modules load correctly, no errors
