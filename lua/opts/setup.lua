@@ -18,14 +18,7 @@ local plugins = {
     "folke/tokyonight.nvim",
     config = function()
       vim.cmd("colorscheme tokyonight-moon")
-      -- Override background/foreground to match Termux (colors.properties).
-      vim.api.nvim_set_hl(0, "Normal",     { fg = "#1A1A1A", bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "NormalNC",   { fg = "#1A1A1A", bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "NormalSB",   { fg = "#1A1A1A", bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "NormalFloat",{ fg = "#1A1A1A", bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "SignColumn", { bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "EndOfBuffer",{ bg = "#FFF7D5" })
-      vim.api.nvim_set_hl(0, "FoldColumn", { bg = "#FFF7D5" })
+      require("pubs.nvim_background")
     end,
   },
 

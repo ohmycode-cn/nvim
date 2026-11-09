@@ -1,0 +1,6 @@
+[2026-11-09-22-18-26]
+- Moved background override from opts/setup.lua to pubs/nvim_background.lua
+- Added pubs/api_interface.lua as module loader
+- Added require("pubs.api_interface") to init.lua
+- Updated dirf_struct.txt and README.MD with pubs/ directory
+- Verified: Normal bg=#FFF7D5 fg=#1A1A1A, no errors

@@ -32,4 +32,6 @@ nvim/
 		  |      |__cmp.lua
 		  |      |__treesitters.lua
 		  |      |__setup.lua
-		  |__pubs/
+	      |__pubs/
+		  |      |__api_interface.lua
+		  |      |__nvim_background.lua

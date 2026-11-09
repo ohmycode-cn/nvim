@@ -21,19 +21,22 @@ Neovim configuration for Termux.
     │   ├── api_interface.lua # Core module loader
     │   ├── basic.lua         # Basic editor options
     │   └── keyboard.lua      # Key mappings
-    └── opts/
-        ├── api_interface.lua # Opts module loader
-        ├── setup.lua         # lazy.nvim bootstrap & plugin declarations
-        ├── cmp.lua           # nvim-cmp auto completion config
-        ├── lsp.lua           # LSP client config loader
-        ├── treesitters.lua   # Treesitter parser config
-        └── lspc/             # Per-language LSP configs
-            ├── clangd.lua    # Shared clangd server definition (C/C++)
-            ├── c.lua
-            ├── cpp.lua
-            ├── rust.lua
-            ├── go.lua
-            └── bash.lua
+    ├── opts/
+    │   ├── api_interface.lua # Opts module loader
+    │   ├── setup.lua         # lazy.nvim bootstrap & plugin declarations
+    │   ├── cmp.lua           # nvim-cmp auto completion config
+    │   ├── lsp.lua           # LSP client config loader
+    │   ├── treesitters.lua   # Treesitter parser config
+    │   └── lspc/             # Per-language LSP configs
+    │       ├── clangd.lua    # Shared clangd server definition (C/C++)
+    │       ├── c.lua
+    │       ├── cpp.lua
+    │       ├── rust.lua
+    │       ├── go.lua
+    │       └── bash.lua
+    └── pubs/
+        ├── api_interface.lua # Pubs module loader
+        └── nvim_background.lua # Background override to match Termux
 ```
 
 ## Plugins
