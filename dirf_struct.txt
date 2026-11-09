@@ -19,16 +19,16 @@ nvim/
 		  |      |__api_interface.lua
 		  |      |__basic.lua
 		  |      |__keyboard.lua
-		  |__opts/
+	      |__opts/
 		  |      |__api_interface.lua
 		  |      |__lspc/
+		  |      |      |__clangd.lua
 		  |      |      |__c.lua
 		  |      |      |__cpp.lua
 		  |      |      |__rust.lua
 		  |      |      |__go.lua
 		  |      |      |__bash.lua
 		  |      |__lsp.lua
-		  |      |__clangd.lua
 		  |      |__cmp.lua
 		  |      |__treesitters.lua
 		  |      |__setup.lua

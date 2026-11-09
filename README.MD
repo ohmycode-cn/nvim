@@ -27,8 +27,8 @@ Neovim configuration for Termux.
         ├── cmp.lua           # nvim-cmp auto completion config
         ├── lsp.lua           # LSP client config loader
         ├── treesitters.lua   # Treesitter parser config
-        ├── clangd.lua        # clangd LSP config
         └── lspc/             # Per-language LSP configs
+            ├── clangd.lua    # Shared clangd server definition (C/C++)
             ├── c.lua
             ├── cpp.lua
             ├── rust.lua
