@@ -1,0 +1,4 @@
+[2026-11-17-22-27-41]
+- Added keyboard mapping: hold Ctrl+Alt+Shift+K to show diagnostics, release to close
+- Timer-based simulation: key repeat resets 200ms timer, release triggers close
+- Key notation in Neovim: <M-C-S-K>
