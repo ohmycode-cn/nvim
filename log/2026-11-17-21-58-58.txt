@@ -1,0 +1,6 @@
+[2026-11-17-21-58-58]
+- Added lspc/py3.lua: Python 3 LSP config (server: pyright)
+- Registered in lsp.lua load chain
+- Status: not enabled (pyright not installed on this device)
+- Updated dirf_struct.txt and README.MD
+- Verified: no errors

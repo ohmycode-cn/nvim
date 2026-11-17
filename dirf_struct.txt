@@ -28,6 +28,7 @@ nvim/
 		  |      |      |__rust.lua
 		  |      |      |__go.lua
 		  |      |      |__bash.lua
+		  |      |      |__py3.lua
 		  |      |__lsp.lua
 		  |      |__cmp.lua
 		  |      |__treesitters.lua

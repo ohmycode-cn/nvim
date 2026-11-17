@@ -33,7 +33,8 @@ Neovim configuration for Termux.
     │       ├── cpp.lua
     │       ├── rust.lua
     │       ├── go.lua
-    │       └── bash.lua
+    │       ├── bash.lua
+    │       └── py3.lua
     └── pubs/
         ├── api_interface.lua # Pubs module loader
         ├── nvim_background.lua # Theme loader (switch active theme here)
