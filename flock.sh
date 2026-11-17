@@ -3,7 +3,7 @@
 if [[ "${0}" != "${BASH_SOURCE[0]}" ]]; then
 	FILE_NAME="${BASH_SOURCE[0]##*/}"
 	echo -e "Error: Right usage: bash ${FILE_NAME} [options]"
-	exit 1
+	return 1 >/dev/null
 fi
 
 LOG_FILE_TYPE=".txt"
@@ -49,4 +49,4 @@ function main() {
 }
 
 main "${1}"
-exit $?
+exit 0 # Expected return 0

@@ -1,0 +1,8 @@
+[2026-11-18-01-43-19]
+- Checked dirf_struct.txt consistency with project: root copy identical to hty/dirfs snapshot 2026-11-18-01-19-48
+- lua/ tree fully matches guidance: core(3) opts(5+7 lspc) pubs(2+13 themes), init.lua present
+- Rule check passed: init.lua and all api_interface.lua contain only require() calls
+- Minor gap: lua/pubs/.gitkeep not listed in dirf_struct.txt (placeholder only, no impact)
+- .gitignore: fixed .DS_Store as file pattern, fixed DIRECTORIES spelling, added OS/editor/backup/temp, *.log and secrets patterns
+- Renamed lock_log.sh to flock.sh (return 1 instead of exit 1 when sourced, force exit 0 at end)
+- Removed stray hty/dirfs/dirf_struct.txt. (trailing-dot filename), registered snapshot 2026-11-18-01-19-48

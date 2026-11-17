@@ -1,31 +1,49 @@
-# DIRCTORYS: HIDE
-.git/
+# AGENT SESSION UTILS MEMORY DIRECTORIES
 .mimocode/
 .opencode/
+
+# DIRECTORIES: HIDE
+.git/
 .vscode/
 .caches/
 .cache/
-.DS_Store/
 .idea/
 
-
-#DIRCTORYS: NORMAL
+# DIRECTORIES: NORMAL
 build/
 
-
-#DIRCTORYS: TRACK STRUCTURE ONLY
+# DIRECTORIES: TRACK STRUCTURE ONLY
 bin/*
 !bin/.gitkeep
 
+# FILES: HIDE
+# mimocode session about
+.mimo-*
 
-#FILES: HIDE
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+._*
 
+# Editor swap / backup / temp
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
 
+# Generic logs
+*.log
 
-#FILES: NORMAL
+# Secrets
+.env
+*.pem
+*.key
+
+# FILES: NORMAL
+# mimocode session about
 mimo-*
-
-
 
 # ALWAYS TRACK
 !**/README.MD
