@@ -1,0 +1,5 @@
+[2026-11-17-22-47-04]
+- Changed Termux diagnostic keymap from Alt+Shift+K to Alt+K (<M-k>)
+- Reason: Alt+Shift conflicts with Android virtual keyboard toggle (system-level, unchangeable)
+- Usage: hold Alt+K to show diagnostics, release to close (use Caps Lock if needed to avoid Shift)
+- Desktop mapping Ctrl+Alt+Shift+K unchanged
