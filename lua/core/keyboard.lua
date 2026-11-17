@@ -43,7 +43,7 @@ local function hold_show_diagnostics()
 end
 
 keymap.set("n", "<C-A-S-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (desktop)" })
-keymap.set("n", "<M-D-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (termux)" })
+keymap.set("n", "<M-K>", hold_show_diagnostics, { desc = "Hold: show diagnostics (termux)" })
 
 -- LSP mappings: buffer-local, active only while a language server is attached.
 vim.api.nvim_create_autocmd("LspAttach", {

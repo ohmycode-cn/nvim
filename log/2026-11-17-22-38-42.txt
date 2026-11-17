@@ -1,0 +1,5 @@
+[2026-11-17-22-38-42]
+- Changed Termux diagnostic keymap from Alt+Cmd+K (<M-D-k>) to Alt+Shift+K (<M-K>)
+- Reason: terminals don't transmit Super/Command key to applications
+- Desktop mapping Ctrl+Alt+Shift+K (<M-C-S-K>) unchanged
+- Verified diagnostics work: clangd detected 3 issues in test C file
