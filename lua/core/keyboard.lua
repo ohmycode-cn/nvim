@@ -20,13 +20,13 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- Split horizontally (top / bottom).
 -- Normal mode: clear search highlight.
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- Normal mode: hold Ctrl+Alt+Shift+K to show diagnostics, release to close.
+-- Normal mode: hold to show diagnostics, release to close.
 -- Terminal cannot detect key release, so a timer simulates it: key repeat
 -- while held resets the timer; after release the timer closes the float.
 local diag_float = nil
 local diag_timer = nil
 
-keymap.set("n", "<C-A-S-k>", function()
+local function hold_show_diagnostics()
   if not diag_float or not vim.api.nvim_win_is_valid(diag_float) then
     diag_float = vim.diagnostic.open_float({ focus = false, border = "rounded" })
   end
@@ -40,7 +40,10 @@ keymap.set("n", "<C-A-S-k>", function()
     end
     diag_float = nil
   end))
-end, { desc = "Hold: show diagnostics, release: close" })
+end
+
+keymap.set("n", "<C-A-S-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (desktop)" })
+keymap.set("n", "<M-D-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (termux)" })
 
 -- LSP mappings: buffer-local, active only while a language server is attached.
 vim.api.nvim_create_autocmd("LspAttach", {
