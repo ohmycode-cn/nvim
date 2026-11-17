@@ -1,4 +1,0 @@
-[2026-11-17-22-32-57]
-- Added Alt+Command+K (<M-D-k>) for Termux to show diagnostics
-- Kept Ctrl+Alt+Shift+K (<M-C-S-K>) for desktop use
-- Refactored: shared hold_show_diagnostics() function for both keymaps

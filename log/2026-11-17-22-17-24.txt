@@ -1,6 +1,0 @@
-[2026-11-17-22-17-24]
-- Filled doc/dependencies.ini framework with complete content
-- [URL]: 10 plugin URLs
-- [DEPENDENCE NAME]: system packages (clang, nodejs, python)
-- [LAZY-PLUGIN]: 10 lazy.nvim plugins
-- [LSP]: per-language server names and packages (c/c++, golang, rust, bash, python3)

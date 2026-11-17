@@ -1,4 +1,0 @@
-[2026-11-17-22-19-23]
-- Completed dependency audit for doc/dependencies.ini
-- Added missing system packages: git, curl, make, tar, unzip, stylua
-- Noted: lua/pubs/backgrouds/cream is a leftover directory (typo "backgrouds", superseded by lua/pubs/theme/)

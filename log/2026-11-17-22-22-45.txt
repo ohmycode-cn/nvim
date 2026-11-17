@@ -1,4 +1,0 @@
-[2026-11-17-22-22-45]
-- basic.lua: added opt.colorcolumn = "80"
-- rust.lua: uncommented rust_analyzer LSP config (now enabled)
-- Removed leftover lua/pubs/backgrouds/ directory (untracked)

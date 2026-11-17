@@ -20,30 +20,42 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- Split horizontally (top / bottom).
 -- Normal mode: clear search highlight.
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- Normal mode: hold to show diagnostics, release to close.
--- Terminal cannot detect key release, so a timer simulates it: key repeat
--- while held resets the timer; after release the timer closes the float.
+-- Normal mode: hold to show diagnostics, release (then any key/move) to close.
+-- Terminal cannot detect key release, so the float stays open until the next
+-- key press, cursor move, or a short idle timeout after key release.
 local diag_float = nil
-local diag_timer = nil
+local diag_group = nil
 
 local function hold_show_diagnostics()
   if not diag_float or not vim.api.nvim_win_is_valid(diag_float) then
-    diag_float = vim.diagnostic.open_float({ focus = false, border = "rounded" })
+    diag_float = vim.diagnostic.open_float({
+      scope = "buffer",
+      focus = false,
+      border = "rounded",
+      max_width = 100,
+      max_height = 25,
+    })
   end
-  if diag_timer then
-    diag_timer:stop()
+  -- Close on next cursor move or insert entry (simulates key release).
+  if diag_group then
+    vim.api.nvim_del_augroup_by_id(diag_group)
   end
-  diag_timer = vim.uv.new_timer()
-  diag_timer:start(200, 0, vim.schedule_wrap(function()
-    if diag_float and vim.api.nvim_win_is_valid(diag_float) then
-      vim.api.nvim_win_close(diag_float, true)
-    end
-    diag_float = nil
-  end))
+  diag_group = vim.api.nvim_create_augroup("DiagHoldClose", { clear = true })
+  vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
+    group = diag_group,
+    once = true,
+    callback = function()
+      if diag_float and vim.api.nvim_win_is_valid(diag_float) then
+        vim.api.nvim_win_close(diag_float, true)
+      end
+      diag_float = nil
+    end,
+  })
 end
 
 keymap.set("n", "<C-A-S-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (desktop)" })
 keymap.set("n", "<M-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (termux)" })
+keymap.set("n", "<C-A-k>", hold_show_diagnostics, { desc = "Hold: show diagnostics (alt)" })
 
 -- LSP mappings: buffer-local, active only while a language server is attached.
 vim.api.nvim_create_autocmd("LspAttach", {

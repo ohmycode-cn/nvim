@@ -4,3 +4,53 @@
 - Updated nvim_background.lua comment, dirf_struct.txt, README.MD
 - Active theme changed to dracula (user config)
 - Verified: bg=#282A36 fg=#F8F8F2, no errors
+
+[2026-11-17-21-58-58]
+- Added lspc/py3.lua: Python 3 LSP config (server: pyright)
+- Registered in lsp.lua load chain
+- Status: not enabled (pyright not installed on this device)
+- Updated dirf_struct.txt and README.MD
+- Verified: no errors
+
+[2026-11-17-22-17-24]
+- Filled doc/dependencies.ini framework with complete content
+- [URL]: 10 plugin URLs
+- [DEPENDENCE NAME]: system packages (clang, nodejs, python)
+- [LAZY-PLUGIN]: 10 lazy.nvim plugins
+- [LSP]: per-language server names and packages (c/c++, golang, rust, bash, python3)
+
+[2026-11-17-22-19-23]
+- Completed dependency audit for doc/dependencies.ini
+- Added missing system packages: git, curl, make, tar, unzip, stylua
+- Noted: lua/pubs/backgrouds/cream is a leftover directory (typo "backgrouds", superseded by lua/pubs/theme/)
+
+[2026-11-17-22-22-45]
+- basic.lua: added opt.colorcolumn = "80"
+- rust.lua: uncommented rust_analyzer LSP config (now enabled)
+- Removed leftover lua/pubs/backgrouds/ directory (untracked)
+
+[2026-11-17-22-27-41]
+- Added keyboard mapping: hold Ctrl+Alt+Shift+K to show diagnostics, release to close
+- Timer-based simulation: key repeat resets 200ms timer, release triggers close
+- Key notation in Neovim: <M-C-S-K>
+
+[2026-11-17-22-32-57]
+- Added Alt+Command+K (<M-D-k>) for Termux to show diagnostics
+- Kept Ctrl+Alt+Shift+K (<M-C-S-K>) for desktop use
+- Refactored: shared hold_show_diagnostics() function for both keymaps
+
+[2026-11-17-22-38-42]
+- Changed Termux diagnostic keymap from Alt+Cmd+K (<M-D-k>) to Alt+Shift+K (<M-K>)
+- Reason: terminals don't transmit Super/Command key to applications
+- Desktop mapping Ctrl+Alt+Shift+K (<M-C-S-K>) unchanged
+- Verified diagnostics work: clangd detected 3 issues in test C file
+
+[2026-11-17-22-47-04]
+- Changed Termux diagnostic keymap from Alt+Shift+K to Alt+K (<M-k>)
+- Reason: Alt+Shift conflicts with Android virtual keyboard toggle (system-level, unchangeable)
+- Usage: hold Alt+K to show diagnostics, release to close (use Caps Lock if needed to avoid Shift)
+- Desktop mapping Ctrl+Alt+Shift+K unchanged
+
+[2026-11-17-22-55-00]
+- Merged 9 individual log files into this single consolidated log
+- Diagnostic float enlarged: max_width=100, max_height=25 for 2800x1840 tablet
