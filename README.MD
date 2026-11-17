@@ -39,11 +39,18 @@ Neovim configuration for Termux.
         ├── nvim_background.lua # Theme loader (switch active theme here)
         └── theme/            # Background themes matching .termux/tbk/
             ├── cream.lua     # bg=#FFF7D5 fg=#1A1A1A (light, Termux default)
+            ├── gray-white.lua # bg=#F0F0F0 fg=#2B2B2B (light)
             ├── catppuccin-mocha.lua # bg=#1E1E2E fg=#CDD6F4 (dark)
             ├── dracula.lua   # bg=#282A36 fg=#F8F8F2 (dark)
-            ├── gray-white.lua # bg=#F0F0F0 fg=#2B2B2B (light)
             ├── gruvbox.lua   # bg=#282828 fg=#EBDBB2 (dark)
-            └── nord.lua      # bg=#2E3440 fg=#D8DEE9 (dark)
+            ├── nord.lua      # bg=#2E3440 fg=#D8DEE9 (dark)
+            ├── aurora.lua    # bg=#0F111A fg=#E0E6F0 (dark)
+            ├── cyberpunk.lua # bg=#0B0B1A fg=#E0E0FF (dark)
+            ├── ember.lua     # bg=#181210 fg=#F2D8C4 (dark)
+            ├── galaxy.lua    # bg=#100A24 fg=#CBB8F5 (dark)
+            ├── matrix.lua    # bg=#000000 fg=#00FF41 (dark)
+            ├── synthwave.lua # bg=#2B213A fg=#FFFFFF (dark)
+            └── tokyo-night.lua # bg=#1A1B26 fg=#C0CAF5 (dark)
 ```
 
 ## Plugins

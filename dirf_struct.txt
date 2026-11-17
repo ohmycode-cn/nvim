@@ -36,9 +36,16 @@ nvim/
 		  |      |__api_interface.lua
 		  |      |__nvim_background.lua
 		  |      |__theme/
-		  |      |      |__cream.lua
+		  |      |      |__aurora.lua
 		  |      |      |__catppuccin-mocha.lua
+		  |      |      |__cream.lua
+		  |      |      |__cyberpunk.lua
 		  |      |      |__dracula.lua
+		  |      |      |__ember.lua
+		  |      |      |__galaxy.lua
 		  |      |      |__gray-white.lua
 		  |      |      |__gruvbox.lua
+		  |      |      |__matrix.lua
 		  |      |      |__nord.lua
+		  |      |      |__synthwave.lua
+		  |      |      |__tokyo-night.lua

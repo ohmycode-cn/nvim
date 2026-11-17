@@ -1,0 +1,6 @@
+[2026-11-17-21-55-56]
+- Added 7 new themes to lua/pubs/theme/: aurora, cyberpunk, ember, galaxy, matrix, synthwave, tokyo-night
+- Now 13 themes total, matching .termux/tbk/ one-to-one
+- Updated nvim_background.lua comment, dirf_struct.txt, README.MD
+- Active theme changed to dracula (user config)
+- Verified: bg=#282A36 fg=#F8F8F2, no errors
