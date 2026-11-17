@@ -6,3 +6,31 @@
 - Wrote LICENSE (MIT)
 - Wrote README.MD with directory structure
 - Verified all 10 plugins load correctly, startup has no errors
+
+[2026-11-09-22-05-57]
+- Moved clangd.lua from opts/ to opts/lspc/ (user adjustment)
+- Fixed require path in lspc/c.lua: opts.clangd -> opts.lspc.clangd
+- Fixed require path in lspc/cpp.lua: opts.clangd -> opts.lspc.clangd
+- Updated dirf_struct.txt: clangd.lua now under opts/lspc/
+- Updated README.MD: reflect new directory structure
+- Verified: lsp, c, cpp modules load correctly, no errors
+
+[2026-11-09-22-10-42]
+- Overrode colorscheme background to match Termux colors.properties
+- Background: #FFF7D5, Foreground: #1A1A1A
+- Affected highlight groups: Normal, NormalNC, NormalSB, NormalFloat, SignColumn, EndOfBuffer, FoldColumn
+
+[2026-11-09-22-18-26]
+- Moved background override from opts/setup.lua to pubs/nvim_background.lua
+- Added pubs/api_interface.lua as module loader
+- Added require("pubs.api_interface") to init.lua
+- Updated dirf_struct.txt and README.MD with pubs/ directory
+- Verified: Normal bg=#FFF7D5 fg=#1A1A1A, no errors
+
+[2026-11-09-22-44-02]
+- Created lua/pubs/theme/ with 6 background themes matching .termux/tbk/
+- Themes: cream, catppuccin-mocha, dracula, gray-white, gruvbox, nord
+- Each theme overrides Normal/NormalNC/NormalSB/NormalFloat/SignColumn/EndOfBuffer/FoldColumn
+- nvim_background.lua now acts as theme loader (switch by changing require target)
+- Updated dirf_struct.txt and README.MD
+- Verified: cream theme active, bg=#FFF7D5 fg=#1A1A1A, no errors
