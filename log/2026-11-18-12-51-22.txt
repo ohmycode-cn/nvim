@@ -1,4 +1,0 @@
-[2026-11-18-12-51-22]
-- Enabled bashls LSP (bash.lua: uncommented config)
-- Enabled pyright LSP (py3.lua: uncommented config)
-- Switched theme from dracula to tokyo-night (nvim_background.lua)
