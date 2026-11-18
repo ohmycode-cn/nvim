@@ -29,6 +29,9 @@ nvim/
 		  |      |      |__go.lua
 		  |      |      |__bash.lua
 		  |      |      |__py3.lua
+		  |      |      |__java.lua
+		  |      |      |__zig.lua
+		  |      |      |__ps1.lua
 		  |      |__lsp.lua
 		  |      |__cmp.lua
 		  |      |__treesitters.lua

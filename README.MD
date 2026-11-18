@@ -13,7 +13,7 @@ Platform-specific tweaks (e.g. diagnostics keymaps) are pre-adapted — see [Usa
 ## Features
 
 - **Zero-touch plugin management** — `lua/opts/setup.lua` auto-installs lazy.nvim and all plugins
-- **Per-language LSP** — C / C++ (clangd), Rust, Go, Bash, Python in `lua/opts/lspc/`
+- **Per-language LSP** — C / C++ (clangd), Rust, Go, Bash, Python, Java, Zig, PowerShell in `lua/opts/lspc/`
 - **Completion stack** — nvim-cmp + LuaSnip + buffer/path/LSP sources
 - **13 color themes** — light & dark, switchable in one line
 - **Hold-to-show diagnostics** — release the key to close, adapted per platform
@@ -81,7 +81,10 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
     │       ├── rust.lua
     │       ├── go.lua
     │       ├── bash.lua
-    │       └── py3.lua
+    │       ├── py3.lua
+    │       ├── java.lua
+    │       ├── zig.lua
+    │       └── ps1.lua
     └── pubs/
         ├── api_interface.lua # Pubs module loader
         ├── nvim_background.lua # Theme loader (switch active theme here)

@@ -1,0 +1,12 @@
+-- LSP configuration for PowerShell (server: powershell-editor-services).
+--
+-- Status: not enabled. The language server is not installed on this device.
+-- To enable:
+--   1. Install PowerShell Editor Services and make sure it is on $PATH.
+--   2. Uncomment the block below.
+--
+-- vim.lsp.config("powershell_es", {
+--   cmd = { "pwsh", "-NoLogo", "-NoProfile", "-Command", "PowerShellEditorServices" },
+--   root_markers = { ".git" },
+-- })
+-- vim.lsp.enable("powershell_es")
