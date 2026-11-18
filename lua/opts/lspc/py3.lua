@@ -6,8 +6,8 @@
 --        npm install -g pyright
 --   2. Uncomment the block below.
 --
--- vim.lsp.config("pyright", {
---   cmd = { "pyright-langserver", "--stdio" },
---   root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", "pyrightconfig.json", ".git" },
--- })
--- vim.lsp.enable("pyright")
+vim.lsp.config("pyright", {
+	cmd = { "pyright-langserver", "--stdio" },
+	root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", "pyrightconfig.json", ".git" },
+})
+vim.lsp.enable("pyright")

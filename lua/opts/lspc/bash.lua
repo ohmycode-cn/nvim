@@ -5,8 +5,8 @@
 --   1. Install bash-language-server and make sure it is on $PATH.
 --   2. Uncomment the block below.
 --
--- vim.lsp.config("bashls", {
---   cmd = { "bash-language-server", "start" },
---   root_markers = { ".git" },
--- })
--- vim.lsp.enable("bashls")
+vim.lsp.config("bashls", {
+	cmd = { "bash-language-server", "start" },
+	root_markers = { ".git" },
+})
+vim.lsp.enable("bashls")
