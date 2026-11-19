@@ -1,0 +1,2 @@
+[2026-11-19-22-45-17]
+- Changed line numbers to absolute (relativenumber = false)

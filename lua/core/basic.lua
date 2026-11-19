@@ -2,7 +2,7 @@
 local opt = vim.opt
 
 -- Line numbers.
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 -- Indentation.
