@@ -73,6 +73,7 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
 ├── hty/                      # Historical snapshots
 │   └── dirfs/                # Directory structure dumps (dated)
 ├── fix/                      # Fix logs (e.g. fix/android/)
+├── tbk/                      # Termux color theme sources (13, match ~/.termux/tbk/)
 └── lua/
     ├── core/
     │   ├── api_interface.lua # Core module loader

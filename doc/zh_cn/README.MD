@@ -73,6 +73,7 @@ git clone https://github.com/ohmycode-cn/nvim $LOCALAPPDATA\nvim
 ├── hty/                      # 历史快照
 │   └── dirfs/                # 目录结构转储（按日期）
 ├── fix/                      # 修复日志（如 fix/android/）
+├── tbk/                      # Termux 配色主题源文件（13 个，对应 ~/.termux/tbk/）
 └── lua/
     ├── core/
     │   ├── api_interface.lua # 核心模块加载器

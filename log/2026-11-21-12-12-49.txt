@@ -24,3 +24,8 @@
 - README.MD + doc/zh_cn/README.MD tree: added fix/, author.storehouse.ini, author.submit.ini
 - Translated 3 Chinese example prompts in agent/WORKFLOW.MD and COMMIT_RULES.MD to English for language consistency
 - Full consistency review passed: version, counts (10/13/10), themes, logs, author identity, require chain, keymaps all aligned
+
+[2026-11-21-14-28-05]
+- Added tbk/ directory: 13 Termux color theme source files (tracked copy of ~/.termux/tbk/)
+- Verified tbk/ matches ~/.termux/tbk/ exactly; color values match lua/pubs/theme/ (hex case only)
+- README.MD + doc/zh_cn/README.MD tree: added tbk/
