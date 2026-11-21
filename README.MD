@@ -4,7 +4,7 @@
 
 ![platform](https://img.shields.io/badge/platform-Termux%20%7C%20Linux%20%7C%20Windows-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![neovim](https://img.shields.io/badge/Neovim-0.9%2B-57A143)
+![neovim](https://img.shields.io/badge/Neovim-0.11%2B-57A143)
 
 One config tree, three platforms. It bootstraps [lazy.nvim](https://github.com/folke/lazy.nvim)
 on startup, wires up LSP / completion / treesitter, and ships 13 ready-to-use color themes.
@@ -23,7 +23,7 @@ Platform-specific tweaks (e.g. diagnostics keymaps) are pre-adapted — see [Usa
 
 | Package | Purpose |
 |---------|---------|
-| Neovim 0.9+ | Editor |
+| Neovim 0.11+ | Editor |
 | git | Plugin cloning |
 | curl | Downloads |
 | clang | clangd / gcc / cc |
@@ -59,6 +59,8 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
 ├── dirf_struct.txt           # Directory structure reference
 ├── flock.sh                  # Log file lock / unlock helper
 ├── lazy-lock.json            # lazy.nvim plugin version lock
+├── author.storehouse.ini     # Author identity archive (tracked)
+├── author.submit.ini         # Author submit credential (gitignored)
 ├── doc/
 │   └── dependencies.ini      # Full dependency audit (system / plugin / LSP)
 ├── agent/                    # AI agent workflow docs
@@ -70,6 +72,7 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
 ├── log/                      # Daily change logs (locked after write)
 ├── hty/                      # Historical snapshots
 │   └── dirfs/                # Directory structure dumps (dated)
+├── fix/                      # Fix logs (e.g. fix/android/)
 └── lua/
     ├── core/
     │   ├── api_interface.lua # Core module loader

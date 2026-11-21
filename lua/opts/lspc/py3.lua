@@ -1,10 +1,6 @@
 -- LSP configuration for Python 3 (server: pyright).
 --
--- Status: not enabled. The language server is not installed on this device.
--- To enable:
---   1. Install pyright and make sure it is on $PATH:
---        npm install -g pyright
---   2. Uncomment the block below.
+-- Status: enabled. pyright is installed globally via npm (pyright-langserver on $PATH).
 --
 vim.lsp.config("pyright", {
 	cmd = { "pyright-langserver", "--stdio" },

@@ -82,7 +82,7 @@ nvim --headless -c 'lua local ok, err = pcall(require, "core.keyboard"); print(o
 
 **Ask the user before pushing.** Example:
 
-> 已提交（`<hash>`）。允许推送吗？
+> Committed (`<hash>`). Allow push?
 
 Push only after explicit approval:
 

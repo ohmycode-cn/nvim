@@ -108,11 +108,11 @@ is empty or missing, copy the values from `author.storehouse.ini`.
 
 Push is **never** automatic. Ask the user:
 
-> 已提交（`<hash>`）。允许推送吗？
+> Committed (`<hash>`). Allow push?
 
 Or in batch:
 
-> 提交 `<hash>` 已就绪，是否推送到 GitHub？
+> Commit `<hash>` is ready. Push to GitHub?
 
 Push only after the user explicitly approves.
 

@@ -4,7 +4,7 @@
 
 ![platform](https://img.shields.io/badge/platform-Termux%20%7C%20Linux%20%7C%20Windows-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![neovim](https://img.shields.io/badge/Neovim-0.9%2B-57A143)
+![neovim](https://img.shields.io/badge/Neovim-0.11%2B-57A143)
 
 一套配置树，三个平台。启动时自动引导 [lazy.nvim](https://github.com/folke/lazy.nvim)，
 装配 LSP / 补全 / treesitter，并附带 13 个开箱即用的配色主题。
@@ -23,7 +23,7 @@
 
 | 软件包 | 用途 |
 |--------|------|
-| Neovim 0.9+ | 编辑器 |
+| Neovim 0.11+ | 编辑器 |
 | git | 插件克隆 |
 | curl | 下载 |
 | clang | clangd / gcc / cc |
@@ -59,6 +59,8 @@ git clone https://github.com/ohmycode-cn/nvim $LOCALAPPDATA\nvim
 ├── dirf_struct.txt           # 目录结构参考
 ├── flock.sh                  # 日志文件锁定 / 解锁工具
 ├── lazy-lock.json            # lazy.nvim 插件版本锁定
+├── author.storehouse.ini     # 作者身份存档（追踪）
+├── author.submit.ini         # 作者提交凭据（gitignore）
 ├── doc/
 │   └── dependencies.ini      # 完整依赖审计（系统 / 插件 / LSP）
 ├── agent/                    # AI 智能体工作流文档
@@ -70,6 +72,7 @@ git clone https://github.com/ohmycode-cn/nvim $LOCALAPPDATA\nvim
 ├── log/                      # 每日变更日志（写入后锁定）
 ├── hty/                      # 历史快照
 │   └── dirfs/                # 目录结构转储（按日期）
+├── fix/                      # 修复日志（如 fix/android/）
 └── lua/
     ├── core/
     │   ├── api_interface.lua # 核心模块加载器

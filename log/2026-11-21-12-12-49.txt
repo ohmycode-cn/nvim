@@ -17,3 +17,10 @@
 - Translated fix/android/fix.log.2026-11-21-12-03-22.txt from Chinese to English for language consistency
 - Created doc/zh_cn/ with Chinese translations: README.MD, ACKNOWLEDGMENTS.MD (agent/ docs excluded per user)
 - Updated README.MD with Acknowledgments section and directory structure
+
+[2026-11-21-14-21-07]
+- Fixed version requirement 0.9+ -> 0.11+ (vim.lsp.config/enable requires 0.11) in README.MD and doc/zh_cn/README.MD
+- Fixed stale status comments in py3.lua and rust.lua: "not enabled/not installed" -> "enabled" (pyright, rust-analyzer are installed and active)
+- README.MD + doc/zh_cn/README.MD tree: added fix/, author.storehouse.ini, author.submit.ini
+- Translated 3 Chinese example prompts in agent/WORKFLOW.MD and COMMIT_RULES.MD to English for language consistency
+- Full consistency review passed: version, counts (10/13/10), themes, logs, author identity, require chain, keymaps all aligned
