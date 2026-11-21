@@ -1,0 +1,5 @@
+[2026-11-21-12-32-50]
+- Created agent/ directory with 5 AI workflow docs: README.MD, WORKFLOW.MD, COMMIT_RULES.MD, CODE_CONVENTIONS.MD, QUICK_ADD.MD
+- Aligned agent docs with author identity mechanism (author.storehouse.ini / author.submit.ini)
+- Updated dirf_struct.txt and README.MD with agent/ directory
+- .gitignore: added author.submit.ini (submit credential, not tracked)

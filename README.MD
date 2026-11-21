@@ -60,6 +60,12 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
 ├── lazy-lock.json            # lazy.nvim plugin version lock
 ├── doc/
 │   └── dependencies.ini      # Full dependency audit (system / plugin / LSP)
+├── agent/                    # AI agent workflow docs
+│   ├── README.MD             # Agent doc index
+│   ├── WORKFLOW.MD           # Task execution flow
+│   ├── COMMIT_RULES.MD       # Commit / log / push discipline
+│   ├── CODE_CONVENTIONS.MD   # Module layout & code style
+│   └── QUICK_ADD.MD          # Recipes: LSP / theme / keymap / plugin
 ├── log/                      # Daily change logs (locked after write)
 ├── hty/                      # Historical snapshots
 │   └── dirfs/                # Directory structure dumps (dated)

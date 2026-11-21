@@ -53,3 +53,9 @@ nvim/
 		  |      |      |__nord.lua
 		  |      |      |__synthwave.lua
 		  |      |      |__tokyo-night.lua
+    |__agent/
+        |      |__README.MD
+        |      |__WORKFLOW.MD
+        |      |__COMMIT_RULES.MD
+        |      |__CODE_CONVENTIONS.MD
+        |      |__QUICK_ADD.MD

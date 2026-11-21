@@ -46,6 +46,14 @@ Desktop.ini
 # mimocode session about
 mimo-*
 
+# TRACK: keep storehouse author information and ignore submit author information
+#        track.
+# FILE:  author.storehouse.ini - keep it
+#        author.submit.ini     - no track it, but the standard for submitting 
+#                                author information by intelligent agents is 
+#                                this document
+author.submit.ini
+
 # ALWAYS TRACK
 !**/README.MD
 !**/README.md
