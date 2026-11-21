@@ -4,7 +4,7 @@
 -- synthwave, tokyo-night.
 -- Called after colorscheme is loaded (see opts/setup.lua).
 
-require("pubs.theme.tokyo-night")
+require("pubs.theme.catppuccin-mocha")
 
 -- No italic fonts anywhere (comments included).
 vim.api.nvim_set_hl(0, "Comment", { fg = "#2e7d32", italic = false })

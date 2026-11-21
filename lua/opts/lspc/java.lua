@@ -1,12 +1,9 @@
 -- LSP configuration for Java (server: jdtls).
 --
--- Status: not enabled. The language server is not installed on this device.
--- To enable:
---   1. Install jdtls and make sure it is on $PATH.
---   2. Uncomment the block below.
+-- Status: enabled. jdtls is installed at ~/.java-lsp (launcher: bin/jdtls).
 --
--- vim.lsp.config("jdtls", {
---   cmd = { "jdtls" },
---   root_markers = { "pom.xml", "build.gradle", "build.gradle.kts", ".git" },
--- })
--- vim.lsp.enable("jdtls")
+vim.lsp.config("jdtls", {
+	cmd = { "jdtls" },
+	root_markers = { "pom.xml", "build.gradle", "build.gradle.kts", ".git" },
+})
+vim.lsp.enable("jdtls")

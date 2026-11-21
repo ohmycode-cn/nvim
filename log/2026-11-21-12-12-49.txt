@@ -1,0 +1,7 @@
+[2026-11-21-12-12-49]
+- .gitignore: added pkg/ (nested git repo jdtls-termux, not to be tracked)
+- bash.lua: updated status comment (bashls enabled via npm)
+- clangd.lua: --function-arg-placeholders=true, added before_init offsetEncoding fix
+- java.lua: enabled jdtls (installed at ~/.java-lsp)
+- nvim_background.lua: theme switched to catppuccin-mocha
+- fix/: added fix/android/fix.log (tracked)

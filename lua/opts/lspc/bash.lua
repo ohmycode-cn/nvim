@@ -1,9 +1,6 @@
 -- LSP configuration for Bash (server: bash-language-server).
 --
--- Status: not enabled. The language server is not installed on this device.
--- To enable:
---   1. Install bash-language-server and make sure it is on $PATH.
---   2. Uncomment the block below.
+-- Status: enabled. bash-language-server is installed globally via npm.
 --
 vim.lsp.config("bashls", {
 	cmd = { "bash-language-server", "start" },

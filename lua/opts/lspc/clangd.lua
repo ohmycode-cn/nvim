@@ -16,7 +16,7 @@ vim.lsp.config("clangd", {
     "--completion-style=detailed",
     "--header-insertion=iwyu",
     "--header-insertion-decorators",
-    "--function-arg-placeholders",
+    "--function-arg-placeholders=true",
     "--fallback-style=llvm",
     "--pch-storage=memory",
     "--log=error",
@@ -32,4 +32,7 @@ vim.lsp.config("clangd", {
     ".git",
   },
   capabilities = capabilities,
+  before_init = function(params, _)
+    params.capabilities.offsetEncoding = nil
+  end,
 })
