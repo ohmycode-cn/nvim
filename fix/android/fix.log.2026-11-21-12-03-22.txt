@@ -1,60 +1,62 @@
-LSP 修复记录 — 2026-11-21
+LSP Fix Log — 2026-11-21
 =========================
 
-来源: 检查 ~/.local/state/nvim/lsp.log (2293 行, 1908 条 error/warn)
-三类问题: clangd 参数与弃用告警、bashls 不可执行、jdtls 平台不识别。
-全部修复并以 headless nvim 实测通过。
+Source: checked ~/.local/state/nvim/lsp.log (2293 lines, 1908 error/warn entries)
+Three issue classes: clangd argument and deprecation warnings, bashls not executable, jdtls platform unrecognized.
+All fixed and verified with headless nvim.
 
 --------------------------------------------------
-1. clangd: --function-arg-placeholders 非法 + offsetEncoding 弃用告警 (293 条)
+1. clangd: invalid --function-arg-placeholders + offsetEncoding deprecation warning (293 entries)
 --------------------------------------------------
-文件: ~/.config/nvim/lua/opts/lspc/clangd.lua
+File: ~/.config/nvim/lua/opts/lspc/clangd.lua
 
-修复 a — clangd 21 要求该参数显式给布尔值:
+Fix a — clangd 21 requires this argument to be an explicit boolean:
   - "--function-arg-placeholders",
   + "--function-arg-placeholders=true",
 
-修复 b — "offsetEncoding capability is a deprecated clangd extension" 告警
-由客户端 capabilities 中的 offsetEncoding 键触发。实测任何取值
-(空表/null/false/字符串) 都会告警,只有整键移除才干净。
-该键由 nvim-lspconfig 的 lsp/clangd.lua 默认配置注入
+Fix b — "offsetEncoding capability is a deprecated clangd extension" warning
+triggered by the offsetEncoding key in client capabilities. Testing showed any
+value (empty table / null / false / string) still triggers the warning; only
+removing the entire key resolves it.
+The key is injected by nvim-lspconfig's lsp/clangd.lua default config
 (lazy/nvim-lspconfig/lsp/clangd.lua: capabilities.offsetEncoding = { 'utf-8', 'utf-16' }),
-vim.lsp.config 按 tbl_deep_extend('force') 合并,无法用 nil 覆盖删除,
-故在 before_init 钩子中删除:
+and vim.lsp.config merges via tbl_deep_extend('force'), so nil cannot override
+and delete it. Removed in the before_init hook instead:
   capabilities = capabilities,
   before_init = function(params, _)
     params.capabilities.offsetEncoding = nil
   end,
 
-验证: headless nvim 打开 .c 文件, clangd 附带 (offset_encoding=utf-8), lsp.log 0 新增错误。
+Verified: headless nvim opened a .c file, clangd attached with (offset_encoding=utf-8), zero new errors in lsp.log.
 
 --------------------------------------------------
-2. bashls: "bash-language-server is not executable" (22 条)
+2. bashls: "bash-language-server is not executable" (22 entries)
 --------------------------------------------------
-根因一: 服务器未安装。
-  修复: npm install -g bash-language-server  (已装 5.8.1)
-  安装位置: $PREFIX/lib/node_modules/bash-language-server (bin 链接到 $PREFIX/bin)
+Root cause 1: server not installed.
+  Fix: npm install -g bash-language-server  (installed 5.8.1)
+  Location: $PREFIX/lib/node_modules/bash-language-server (bin linked to $PREFIX/bin)
 
-根因二 (安装后暴露): Termux 下 shebang "#!/usr/bin/env node" 找不到 /usr/bin/env。
-  修复: termux-fix-shebang $PREFIX/lib/node_modules/bash-language-server/out/cli.js
-  改写为 "#!/data/data/com.termux/files/usr/bin/env node"
-  注意: npm 升级该包后需重跑此命令。
+Root cause 2 (surfaced after install): on Termux the shebang "#!/usr/bin/env node"
+cannot find /usr/bin/env.
+  Fix: termux-fix-shebang $PREFIX/lib/node_modules/bash-language-server/out/cli.js
+  Rewrote to "#!/data/data/com.termux/files/usr/bin/env node"
+  Note: re-run this command after npm upgrades the package.
 
-同时更新 lua/opts/lspc/bash.lua 过时注释 ("Status: not enabled" → 已启用)。
+Also updated the outdated comment in lua/opts/lspc/bash.lua ("Status: not enabled" -> enabled).
 
-验证: headless nvim 打开 .sh 文件, bashls 正常附带。
+Verified: headless nvim opened a .sh file, bashls attached normally.
 
 --------------------------------------------------
-3. jdtls: "Exception: Unknown platform Android detected" (6 条)
+3. jdtls: "Exception: Unknown platform Android detected" (6 entries)
 --------------------------------------------------
-文件: ~/.java-lsp/bin/jdtls.py  (get_shared_config_path)
+File: ~/.java-lsp/bin/jdtls.py  (get_shared_config_path)
 
-根因: Termux 中 platform.system() 返回 "Android", 原脚本只认
-Linux/FreeBSD/Darwin/Windows, 直接抛异常。
+Root cause: under Termux, platform.system() returns "Android", while the original
+script only recognized Linux/FreeBSD/Darwin/Windows and threw an exception directly.
 
-修复 — 增加 Android 分支, 并按 machine 选择共享配置目录
-(config_linux 引用 x86_64 launcher, config_linux_arm 引用 aarch64 launcher;
-本机为 aarch64):
+Fix — added an Android branch, selecting the shared config directory by machine
+(config_linux references the x86_64 launcher, config_linux_arm references the
+aarch64 launcher; this device is aarch64):
   elif system == 'Android':
       # Termux: platform.system() reports "Android"; reuse Linux configs
       if platform.machine() in ('aarch64', 'arm64'):
@@ -62,17 +64,17 @@ Linux/FreeBSD/Darwin/Windows, 直接抛异常。
       else:
           config_dir = 'config_linux'
 
-附带修复 — 同样的 shebang 问题 ("#!/usr/bin/env python3"):
+Additional fix — same shebang issue ("#!/usr/bin/env python3"):
   termux-fix-shebang ~/.java-lsp/bin/jdtls
 
-同时更新 lua/opts/lspc/java.lua 过时注释 ("Status: not enabled" → 已启用)。
+Also updated the outdated comment in lua/opts/lspc/java.lua ("Status: not enabled" -> enabled).
 
-验证: headless nvim 打开 .java 文件, jdtls 正常附带。
-残留噪音: 启动时 3 条 JVM stderr (incubator modules 警告 + Aries SPI-Fly INFO),
-被 nvim 记为 ERROR 级但无害, 不影响功能。
+Verified: headless nvim opened a .java file, jdtls attached normally.
+Residual noise: 3 JVM stderr lines at startup (incubator module warnings + Aries SPI-Fly INFO),
+recorded as ERROR level by nvim but harmless and do not affect functionality.
 
 --------------------------------------------------
-结论
+Conclusion
 --------------------------------------------------
-lsp.log 三类错误清零。测试用临时文件已清理。
-维护提示: npm 升级 bash-language-server 后需重跑 termux-fix-shebang。
+All three error classes in lsp.log are cleared. Temporary test files have been cleaned up.
+Maintenance note: re-run termux-fix-shebang after npm upgrades bash-language-server.

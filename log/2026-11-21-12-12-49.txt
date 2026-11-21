@@ -5,3 +5,15 @@
 - java.lua: enabled jdtls (installed at ~/.java-lsp)
 - nvim_background.lua: theme switched to catppuccin-mocha
 - fix/: added fix/android/fix.log (tracked)
+
+[2026-11-21-12-32-50]
+- Created agent/ directory with 5 AI workflow docs: README.MD, WORKFLOW.MD, COMMIT_RULES.MD, CODE_CONVENTIONS.MD, QUICK_ADD.MD
+- Aligned agent docs with author identity mechanism (author.storehouse.ini / author.submit.ini)
+- Updated dirf_struct.txt and README.MD with agent/ directory
+- .gitignore: added author.submit.ini (submit credential, not tracked)
+
+[2026-11-21-12-58-21]
+- Created ACKNOWLEDGMENTS.MD (AI model providers acknowledgment)
+- Translated fix/android/fix.log.2026-11-21-12-03-22.txt from Chinese to English for language consistency
+- Created doc/zh_cn/ with Chinese translations: README.MD, ACKNOWLEDGMENTS.MD (agent/ docs excluded per user)
+- Updated README.MD with Acknowledgments section and directory structure

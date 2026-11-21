@@ -52,6 +52,7 @@ Start `nvim` — lazy.nvim bootstraps itself and installs the plugin set on firs
 ├── init.lua                  # Entry point (require only)
 ├── LICENSE                   # MIT License
 ├── README.MD                 # This file
+├── ACKNOWLEDGMENTS.MD        # AI model providers acknowledgment
 ├── .gitignore
 ├── .stylua.toml              # StyLua formatter configuration
 ├── dependences_list.ini      # Plugin dependency URLs (short list)
@@ -161,3 +162,7 @@ bash flock.sh unlock   # chmod u+w log/*.txt  (before writing a new entry)
 ## License
 
 [MIT](LICENSE)
+
+## Acknowledgments
+
+AI model providers that supported this project — see [ACKNOWLEDGMENTS.MD](ACKNOWLEDGMENTS.MD).
