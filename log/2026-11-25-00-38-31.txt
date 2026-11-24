@@ -1,0 +1,2 @@
+[2026-11-25-00-38-31]
+- Added backup/ directory with Termux backup archive (termux-dir tar + .bak) and termux.properties snapshot
