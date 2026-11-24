@@ -4,7 +4,14 @@
 -- synthwave, tokyo-night.
 -- Called after colorscheme is loaded (see opts/setup.lua).
 
-require("pubs.theme.catppuccin-mocha")
+-- require("pubs.theme.gray-white")
+
+-- Disable custom background so the terminal background shows through.
+for _, group in ipairs({ "Normal", "NormalNC", "NormalSB", "NormalFloat", "SignColumn", "EndOfBuffer", "FoldColumn" }) do
+  local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+  hl.bg = nil
+  vim.api.nvim_set_hl(0, group, hl)
+end
 
 -- No italic fonts anywhere (comments included).
 vim.api.nvim_set_hl(0, "Comment", { fg = "#2e7d32", italic = false })
